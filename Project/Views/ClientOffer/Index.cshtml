@@ -1,0 +1,61 @@
+@model IEnumerable<Project.Models.ClientWithOffers>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Client.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client.CNP)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Client.Position)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Offers)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.CNP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Client.Position)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Offers)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
